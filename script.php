@@ -137,6 +137,10 @@ function attQtd(){
 		quantidade[0].min = resultado;
         quantidade[0].value = resultado;
 	}
+	if(valorDigitado.value < 0){
+		alert('O valor minimo é 0');
+		valorDigitado.value = 0;
+	}
 }
 	
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -185,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						<td style="padding: 1em;" class="pp-aparecer-td">
 							<div class="form-group">
 								<label><b>Largura</b> da parede</label>
-								<input id="valor-digitado" type="number" step="0.01" placeholder="0.00" value=0.00 name="largura" oninput="attQtd()" onkeyup="attQtd()">
+								<input id="valor-digitado" type="number" step="0.01" placeholder="0.00" name="largura" oninput="attQtd()" onkeyup="attQtd()" min="0">
 							</div>
 						</td>
 						<td style="vertical-align: middle;" class="pp-aparecer-td"><button type="button" onclick="atualizar()" class="btn btn-primary">
